@@ -65,7 +65,7 @@ This repository tracks notable **commercial managed caching platforms** and **op
 
 ## 🔓 Open-Source GitHub Projects 🛠️
 
-*The open-source projects below are sorted by GitHub Stars_Counts (descending).*
+*The open-source projects below are sorted by GitHub_Stars_Counts (descending).*
 
 ### ⚡ Redis-Compatible & High-Performance Caches
 
