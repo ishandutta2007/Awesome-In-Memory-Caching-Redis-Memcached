@@ -65,68 +65,68 @@ This repository tracks notable **commercial managed caching platforms** and **op
 
 ## 🔓 Open-Source GitHub Projects 🛠️
 
-*The open-source projects below are sorted by GitHub Star counts (descending).*
+*The open-source projects below are sorted by GitHub Stars_Counts (descending).*
 
 ### ⚡ Redis-Compatible & High-Performance Caches
 
-- **[Redis 8](https://github.com/redis/redis)** [![GitHub Stars](https://img.shields.io/github/stars/redis/redis?style=social&color=white)](https://github.com/redis/redis/stargazers) 🔴  
+- **[Redis 8](https://github.com/redis/redis)** [![GitHub_Stars](https://img.shields.io/github/stars/redis/redis?style=social&color=white)](https://github.com/redis/redis/stargazers) 🔴  
   **Redis under dual/AGPLv3 licensing**, integrating Redis Stack modules directly into core. Features up to 87% faster commands, 2x throughput, JSON, Time Series, and Search Query Engine.
 
-- **[Dragonfly](https://github.com/dragonflydb/dragonfly)** [![GitHub Stars](https://img.shields.io/github/stars/dragonflydb/dragonfly?style=social&color=white)](https://github.com/dragonflydb/dragonfly/stargazers) 🐉  
+- **[Dragonfly](https://github.com/dragonflydb/dragonfly)** [![GitHub_Stars](https://img.shields.io/github/stars/dragonflydb/dragonfly?style=social&color=white)](https://github.com/dragonflydb/dragonfly/stargazers) 🐉  
   **Modern ultra-fast in-memory data store**, BSL 1.1 licensed. Multi-threaded, shared-nothing architecture delivering 2.5–3.5x throughput of original Redis while using 15–22% less RAM.
 
-- **[Valkey](https://github.com/valkey-io/valkey)** [![GitHub Stars](https://img.shields.io/github/stars/valkey-io/valkey?style=social&color=white)](https://github.com/valkey-io/valkey/stargazers) 🛡️  
+- **[Valkey](https://github.com/valkey-io/valkey)** [![GitHub_Stars](https://img.shields.io/github/stars/valkey-io/valkey?style=social&color=white)](https://github.com/valkey-io/valkey/stargazers) 🛡️  
   **The primary open-source BSD-3-Clause successor to Redis**, Linux Foundation project backed by AWS, Google, and Oracle. Fully retains Redis data structures, Sentinel, clustering, and Lua scripts with multithreaded I/O.
 
-- **[KeyDB](https://github.com/Snapchat/KeyDB)** [![GitHub Stars](https://img.shields.io/github/stars/Snapchat/KeyDB?style=social&color=white)](https://github.com/Snapchat/KeyDB/stargazers) 🔑  
+- **[KeyDB](https://github.com/Snapchat/KeyDB)** [![GitHub_Stars](https://img.shields.io/github/stars/Snapchat/KeyDB?style=social&color=white)](https://github.com/Snapchat/KeyDB/stargazers) 🔑  
   **Multi-threaded Redis fork from Snapchat**, BSD-3-Clause licensed. Features active-active multi-master replication, multi-threaded query execution, and FLASH storage overflow.
 
-- **[Garnet](https://github.com/microsoft/garnet)** [![GitHub Stars](https://img.shields.io/github/stars/microsoft/garnet?style=social&color=white)](https://github.com/microsoft/garnet/stargazers) 💎  
+- **[Garnet](https://github.com/microsoft/garnet)** [![GitHub_Stars](https://img.shields.io/github/stars/microsoft/garnet?style=social&color=white)](https://github.com/microsoft/garnet/stargazers) 💎  
   **Microsoft Research's Redis-compatible cache store**, MIT licensed. Built on modern .NET with native multithreading, async network I/O, and lock-free data structures.
 
-- **[DiceDB](https://github.com/DiceDB/dice)** [![GitHub Stars](https://img.shields.io/github/stars/DiceDB/dice?style=social&color=white)](https://github.com/DiceDB/dice/stargazers) 🎲  
+- **[DiceDB](https://github.com/DiceDB/dice)** [![GitHub_Stars](https://img.shields.io/github/stars/DiceDB/dice?style=social&color=white)](https://github.com/DiceDB/dice/stargazers) 🎲  
   **In-memory real-time database with SQL-based reactivity**, fork of Valkey. Drop-in Redis replacement with `dicedb-spill` module for RocksDB disk persistence on eviction.
 
-- **[Redka](https://github.com/nalgeon/redka)** [![GitHub Stars](https://img.shields.io/github/stars/nalgeon/redka?style=social&color=white)](https://github.com/nalgeon/redka/stargazers) 🗃️  
+- **[Redka](https://github.com/nalgeon/redka)** [![GitHub_Stars](https://img.shields.io/github/stars/nalgeon/redka?style=social&color=white)](https://github.com/nalgeon/redka/stargazers) 🗃️  
   **Redis re-implemented with SQLite**, BSD-3-Clause licensed. Provides Redis API compatibility backed by ACID-compliant SQLite storage.
 
 ---
 
 ### ⚡ Memcached, Proxies & Protocol Routers
 
-- **[Memcached](https://github.com/memcached/memcached)** [![GitHub Stars](https://img.shields.io/github/stars/memcached/memcached?style=social&color=white)](https://github.com/memcached/memcached/stargazers) ⚡  
+- **[Memcached](https://github.com/memcached/memcached)** [![GitHub_Stars](https://img.shields.io/github/stars/memcached/memcached?style=social&color=white)](https://github.com/memcached/memcached/stargazers) ⚡  
   **The classic distributed memory object caching system**, BSD-3-Clause licensed. Simple, multi-threaded, high-speed key-value caching standard for web applications.
 
-- **[twemproxy (nutcracker)](https://github.com/twitter/twemproxy)** [![GitHub Stars](https://img.shields.io/github/stars/twitter/twemproxy?style=social&color=white)](https://github.com/twitter/twemproxy/stargazers) 🐦  
+- **[twemproxy (nutcracker)](https://github.com/twitter/twemproxy)** [![GitHub_Stars](https://img.shields.io/github/stars/twitter/twemproxy?style=social&color=white)](https://github.com/twitter/twemproxy/stargazers) 🐦  
   **Twitter's fast, lightweight proxy for Memcached and Redis**, Apache-2.0 licensed. Provides high-performance connection pooling, sharding, and key distribution.
 
-- **[Mcrouter](https://github.com/facebook/mcrouter)** [![GitHub Stars](https://img.shields.io/github/stars/facebook/mcrouter?style=social&color=white)](https://github.com/facebook/mcrouter/stargazers) 👤  
+- **[Mcrouter](https://github.com/facebook/mcrouter)** [![GitHub_Stars](https://img.shields.io/github/stars/facebook/mcrouter?style=social&color=white)](https://github.com/facebook/mcrouter/stargazers) 👤  
   **Facebook's Memcached protocol router**, MIT licensed. Scales hyper-scale Memcached deployments with consistent hashing, multi-cluster routing, and failover.
 
 ---
 
 ### ⚡ Embedded & Application-Level Cache Libraries
 
-- **[Caffeine](https://github.com/ben-manes/caffeine)** [![GitHub Stars](https://img.shields.io/github/stars/ben-manes/caffeine?style=social&color=white)](https://github.com/ben-manes/caffeine/stargazers) ☕  
+- **[Caffeine](https://github.com/ben-manes/caffeine)** [![GitHub_Stars](https://img.shields.io/github/stars/ben-manes/caffeine?style=social&color=white)](https://github.com/ben-manes/caffeine/stargazers) ☕  
   **High-performance in-memory caching library for Java**, Apache-2.0 licensed. Near-optimal hit rates using Window TinyLFU eviction algorithm.
 
-- **[BuntDB](https://github.com/tidwall/buntdb)** [![GitHub Stars](https://img.shields.io/github/stars/tidwall/buntdb?style=social&color=white)](https://github.com/tidwall/buntdb/stargazers) 🎯  
+- **[BuntDB](https://github.com/tidwall/buntdb)** [![GitHub_Stars](https://img.shields.io/github/stars/tidwall/buntdb?style=social&color=white)](https://github.com/tidwall/buntdb/stargazers) 🎯  
   **Embeddable in-memory key/value database for Go**, MIT licensed. Supports spatial R-Tree indexing, custom sorting, and JSON indexing.
 
-- **[Ristretto](https://github.com/dgraph-io/ristretto)** [![GitHub Stars](https://img.shields.io/github/stars/dgraph-io/ristretto?style=social&color=white)](https://github.com/dgraph-io/ristretto/stargazers) 🍃  
+- **[Ristretto](https://github.com/dgraph-io/ristretto)** [![GitHub_Stars](https://img.shields.io/github/stars/dgraph-io/ristretto?style=social&color=white)](https://github.com/dgraph-io/ristretto/stargazers) 🍃  
   **High-performance memory cache library for Go**, Apache-2.0 licensed. Focused on throughput, contention resistance, and TinyLFU eviction.
 
-- **[SugarDB (formerly EchoVault)](https://github.com/EchoVault/SugarDB)** [![GitHub Stars](https://img.shields.io/github/stars/EchoVault/SugarDB?style=social&color=white)](https://github.com/EchoVault/SugarDB/stargazers) 🍬  
+- **[SugarDB (formerly EchoVault)](https://github.com/EchoVault/SugarDB)** [![GitHub_Stars](https://img.shields.io/github/stars/EchoVault/SugarDB?style=social&color=white)](https://github.com/EchoVault/SugarDB/stargazers) 🍬  
   **Embeddable and distributed in-memory alternative to Redis**, Apache-2.0 licensed. Go-native with LFU/LRU eviction, Pub/Sub, and Raft clustering.
 
 ---
 
 ### ⚡ Distributed Data Grids & In-Memory Computing
 
-- **[Hazelcast](https://github.com/hazelcast/hazelcast)** [![GitHub Stars](https://img.shields.io/github/stars/hazelcast/hazelcast?style=social&color=white)](https://github.com/hazelcast/hazelcast/stargazers) 🌰  
+- **[Hazelcast](https://github.com/hazelcast/hazelcast)** [![GitHub_Stars](https://img.shields.io/github/stars/hazelcast/hazelcast?style=social&color=white)](https://github.com/hazelcast/hazelcast/stargazers) 🌰  
   **Unified real-time data platform and distributed cache**, Apache-2.0 licensed. Combines distributed in-memory storage with real-time stream processing.
 
-- **[Apache Ignite](https://github.com/apache/ignite)** [![GitHub Stars](https://img.shields.io/github/stars/apache/ignite?style=social&color=white)](https://github.com/apache/ignite/stargazers) 🔥  
+- **[Apache Ignite](https://github.com/apache/ignite)** [![GitHub_Stars](https://img.shields.io/github/stars/apache/ignite?style=social&color=white)](https://github.com/apache/ignite/stargazers) 🔥  
   **Distributed in-memory database, caching, and computing platform**, Apache-2.0 licensed. Supports ACID transactions, ANSI SQL, and compute grid processing.
 
 ---
