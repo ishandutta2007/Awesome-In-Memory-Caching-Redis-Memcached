@@ -1,279 +1,184 @@
-# Awesome-In-Memory-Caching-Redis-Memcached
-
-## Top In-Memory Caching (Redis/Memcached) Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Managed Cache Services, Redis/Memcached Alternatives & Self-Hosted Caching*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **commercial managed caching platforms** and **open-source projects** that provide in-memory caching and key-value storage — from fully managed cloud services to community-driven Redis forks and high-performance alternatives.
-
-
-
-**Examples** include Amazon ElastiCache, Redis Enterprise Cloud, Upstash Redis, Memurai, Azure Cache for Redis, Google Cloud Memorystore, Aiven for Redis, Momento Serverless Cache, Dragonfly Cloud, and Hazelcast Cloud (the category leaders).
-
-
-
-**Open-source emphasis**: The Redis ecosystem underwent a major licensing shift in 2024–2025, with **Valkey** emerging as the Linux Foundation BSD-3-Clause successor backed by AWS, Google, and Oracle . **Dragonfly** delivers multi-threaded performance with 2.5–3.5x Redis throughput under high concurrency . **KeyDB** brings active-active replication . **Garnet** from Microsoft Research provides .NET-native Redis compatibility . **Memcached** remains the lightweight caching standard. **DiceDB** adds cache spill-to-disk, while **SugarDB** and **BuntDB** serve embedded use cases. This section is heavily expanded.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Amazon ElastiCache](https://aws.amazon.com/elasticache/)**  
-
-  **AWS's fully managed caching service** — supports Redis, Memcached, and **Valkey** . **Serverless option** for automatic scaling . **As of 2025, AWS defaults new clusters to Valkey unless explicitly overridden** . **Best for AWS-native caching workloads** .
-
-
-
-- **[Redis Enterprise Cloud](https://redis.com/cloud/)**  
-
-  **The commercial Redis platform** — fully managed with active-active geo-distribution and modules . **Pricing scales with throughput and memory** . **Best for enterprises wanting Redis with commercial support** .
-
-
-
-- **[Upstash Redis](https://upstash.com/redis)**  
-
-  **Serverless Redis** — pay-per-request pricing with global replication . **REST API and low latency** . **Best for serverless applications** .
-
-
-
-- **[Memurai](https://www.memurai.com/)**  
-
-  **Redis-compatible cache for Windows** — native Windows service with Redis compatibility . **Best for Windows-centric environments** .
-
-
-
-- **[Azure Cache for Redis](https://azure.microsoft.com/en-us/products/cache/)**  
-
-  **Microsoft's managed Redis** — integrated with Azure ecosystem . **Note**: Enterprise tiers retire 31 March 2027; Basic/Standard/Premium retire 30 September 2028. Migration to **Azure Managed Redis** is the destination .
-
-
-
-- **[Google Cloud Memorystore](https://cloud.google.com/memorystore)**  
-
-  **Google's managed caching** — supports Redis, Memcached, and **Valkey** as fully managed options . **Best for GCP-native caching** .
-
-
-
-- **[Aiven for Redis](https://aiven.io/redis)**  
-
-  **Managed Redis on multiple clouds** — available on AWS, GCP, Azure, and DigitalOcean . **Best for multi-cloud Redis** .
-
-
-
-- **[Momento Serverless Cache](https://www.gomomento.com/)**  
-
-  **Serverless caching platform** — pay-per-use with sub-millisecond latency . **Best for serverless architectures** .
-
-
-
-- **[Dragonfly Cloud](https://www.dragonflydb.io/)**  
-
-  **Managed Dragonfly** — multi-threaded architecture for 25x throughput over single-threaded engines . **Best for high-performance caching** .
-
-
-
-- **[Hazelcast Cloud](https://hazelcast.com/)**  
-
-  **In-memory data grid** — distributed caching and computing . **Best for distributed caching at scale** .
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Redis-Compatible Caches
-
-
-
-- **[Valkey](https://github.com/valkey-io/valkey)**  
-
-  **The primary community-driven open-source successor to Redis**, BSD-3-Clause licensed . **Linux Foundation project backed by AWS, Google, and Oracle** . **Fully free with no license restrictions** . **Retains Redis core data structures, persistence, replication, Sentinel, clustering, Lua scripting, and transactions** — existing Redis clients can connect directly . **Valkey 8.0 introduced enhanced I/O multithreading** with reports of up to 1.19 million requests per second . **Provides BSD-licensed equivalents to Redis Stack modules**: valkey-json, valkey-bloom, valkey-search, valkey-ldap . **Best for organizations requiring permissive licensing and community governance** .
-
-
-
-- **[Redis 8](https://github.com/redis/redis)**  
-
-  **Redis under AGPLv3 licensing** (additional option alongside RSALv2/SSPLv1), with Redis Stack modules integrated into core . **Significant performance improvements**: up to 87% faster commands and 2x throughput over earlier releases . **Includes JSON, Time Series, probabilistic data types, and Query Engine** . **Best for teams needing Redis Stack modules under open-source licensing** .
-
-
-
-- **[Dragonfly](https://github.com/dragonflydb/dragonfly)**  
-
-  **Modern ultra-fast in-memory data store**, BSL 1.1 licensed with additional use grant . **Multi-threaded, shared-nothing architecture** — partitions keyspace between threads for vertical scaling . **Consistently delivered 2.5–3.5x ops/sec of original Redis under high concurrency** . **Memory efficiency: same data used 15–22% less RAM** . **Supports Redis and Memcached APIs, snapshots, replication, expiry, and eviction** . **Best for memory or CPU-constrained workloads** .
-
-
-
-- **[KeyDB](https://github.com/Snapchat/KeyDB)**  
-
-  **Multi-threaded Redis fork from Snapchat**, BSD-3-Clause licensed . **Multithreaded networking and query processing** leveraging multiple CPU cores . **Active-active replication** — multiple instances can accept writes and replicate to each other . **FLASH storage for large datasets and subkey expiration** . **Trade-off**: Slower development cadence than Valkey, Redis, or Dragonfly . **Best for active-active replication requirements** .
-
-
-
-- **[Garnet](https://github.com/microsoft/garnet)**  
-
-  **Microsoft Research's Redis-compatible implementation**, MIT licensed . **Built on modern .NET runtime with native multithreading and lock-free data structures** . **Async-optimized network I/O and minimal garbage collection overhead** . **Trade-off**: Only ~70% Redis API compatibility . **Best for .NET-centric environments** .
-
-
-
-- **[DiceDB](https://github.com/DiceDB/dice)**  
-
-  **In-memory real-time database with SQL-based reactivity**, fork of Valkey . **Drop-in replacement for Redis** — fully compatible with Valkey and Redis tooling . **dicedb-spill module**: transparently persists evicted keys to disk using RocksDB and restores them on cache misses . **Best for real-time applications needing cache spill to disk** .
-
-
-
-### Memcached & Alternatives
-
-
-
-- **[Memcached](https://github.com/memcached/memcached)**  
-
-  **The classic distributed memory object caching system**, BSD-3-Clause licensed with **13,000+ GitHub stars** . **Simple, fast key-value caching** . **The standard for simple caching** . **Best for straightforward caching needs** .
-
-
-
-- **[Memcached (Windows port)](https://github.com/memcached/memcached)** — Community Windows builds available .
-
-
-
-- **[twemproxy](https://github.com/twitter/twemproxy)**  
-
-  **Twitter's fast proxy for Memcached and Redis**, Apache-2.0 licensed . **Connection pooling and sharding** . **Best for scaling Memcached/Redis** .
-
-
-
-- **[Mcrouter](https://github.com/facebook/mcrouter)**  
-
-  **Facebook's Memcached protocol router**, MIT licensed . **Scales Memcached deployments** with consistent hashing and failover . **Best for large-scale Memcached** .
-
-
-
-### Embedded & Alternative Caches
-
-
-
-- **[SugarDB](https://github.com/EchoVault/SugarDB)**  
-
-  **Embeddable and distributed in-memory alternative to Redis**, Apache-2.0 licensed with **498 GitHub stars** . **Go-based with LFU/LRU caching, pub/sub, and cluster support** . **Best for embedded Go applications** .
-
-
-
-- **[BuntDB](https://github.com/tidwall/buntdb)**  
-
-  **Embeddable in-memory key/value database for Go**, MIT licensed . **Supports spatial indexes and custom indexes** . **Best for embedded Go applications** .
-
-
-
-- **[Ristretto](https://github.com/dgraph-io/ristretto)**  
-
-  **In-memory cache library for Go**, Apache-2.0 licensed . **High performance with LRU, LFU, ARC eviction** . **Best for Go caching** .
-
-
-
-- **[Caffeine](https://github.com/ben-manes/caffeine)**  
-
-  **High-performance in-memory caching library for Java**, Apache-2.0 licensed . **Near-optimal hit rate with Window TinyLFU** . **Best for Java applications** .
-
-
-
-- **[Apache Ignite](https://github.com/apache/ignite)**  
-
-  **Distributed in-memory computing platform**, Apache-2.0 licensed . **Persistence, SQL, and compute grid** . **Best for distributed caching and computing** .
-
-
-
-- **[Hazelcast](https://github.com/hazelcast/hazelcast)**  
-
-  **Unified real-time data platform**, Apache-2.0 licensed . **Stream processing with fast data store** . **Best for distributed caching at scale** .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **tinyredis** — Redis-compatible server in Go with Raft clustering .
-
-- **Redka** — Redis re-implemented with SQLite .
-
-- **Skytable** — NoSQL database with Redis-like API .
-
-- **EchoVault** — Distributed in-memory data store (successor to SugarDB) .
-
-- **NCache** — .NET distributed cache (commercial with open-source core) .
-
-
-
-**Frameworks for building custom in-memory caching solutions**: Combine **Valkey** for the safest permissively-licensed Redis replacement with full command compatibility . Use **Dragonfly** when vertical scaling and multi-core utilization are the primary goals . Deploy **KeyDB** for active-active replication requirements . Choose **Redis 8** when Redis Stack modules are essential and AGPLv3 is acceptable . Integrate **Garnet** for .NET-centric environments with partial Redis API needs . Use **DiceDB** for cache spill-to-disk capabilities . Choose **Memcached** for simple, straightforward caching . Use **Caffeine** for Java applications and **Ristretto** for Go applications . Note that managed caching with global infrastructure, automatic scaling, and vendor-supported SLAs (Amazon ElastiCache, Redis Enterprise Cloud, Azure Cache for Redis) remains primarily commercial territory; open-source stacks provide strong in-memory storage, caching, and persistence foundations that require integration for complete managed deployments.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- In-memory caching platforms handle sensitive application data. Self-hosted solutions require proper security hardening, access controls, encryption at rest and in transit, and compliance with data privacy regulations.
-
-- **License considerations**: Valkey uses BSD-3-Clause , Redis 8 uses AGPLv3/RSALv2/SSPLv1 , Dragonfly uses BSL 1.1 , KeyDB uses BSD-3-Clause , and Garnet uses MIT . Verify licensing against your use case before committing.
-
-- **Redis API compatibility varies**: Valkey ~100% , KeyDB ~95% , Garnet ~70% . Module dependencies (Redis Stack, custom modules) are the most common migration blocker — check before committing to a fork .
-
-- **Azure Cache for Redis retirement**: Enterprise tiers retire 31 March 2027; Basic/Standard/Premium retire 30 September 2028. Migration to Azure Managed Redis is the destination .
-
-- The open-source ecosystem provides strong in-memory caching, storage, and persistence foundations, but **managed infrastructure, global scale, and vendor-supported SLAs** remain primarily commercial offerings.
-
-
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached">
+    <img src="assets/banner.svg" alt="Awesome In-Memory Caching (Redis / Memcached / Valkey) Ecosystem Banner" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached?style=flat-square&color=yellow" alt="Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached?style=flat-square&color=orange" alt="Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached?style=flat-square&color=blue" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+# ⚡ Awesome In-Memory Caching (Redis / Memcached / Valkey) Ecosystem 🚀
+
+> **A curated, SEO-optimized directory of SaaS managed caching platforms, Redis OSS alternatives, high-performance in-memory databases, and distributed key-value data stores.** 💡
 
 ---
 
+## 📌 Executive Summary & Key Highlights 🔍
 
+This repository tracks notable **commercial managed caching platforms** and **open-source GitHub projects** that provide in-memory caching, sub-millisecond key-value storage, and real-time data persistence — from hyper-scale cloud managed services to community-governed Redis successors and multi-threaded engine alternatives. 🌐
 
-**Made for platform engineers, application developers, and organizations seeking in-memory caching sovereignty.**  
+* **⚡ SaaS Industry Leaders**: Amazon ElastiCache, Redis Enterprise Cloud, Upstash Redis, Azure Cache for Redis, Google Cloud Memorystore, Momento Serverless Cache, Dragonfly Cloud, Hazelcast Cloud, and Aiven.
+* **🔓 Open-Source Breakthroughs**: The Redis ecosystem underwent a historic licensing shift in 2024–2025, establishing **Valkey** (Linux Foundation BSD-3-Clause) backed by AWS, Google, and Oracle. **Dragonfly** delivers 2.5–3.5x throughput under high concurrency. **Garnet** (Microsoft Research) brings native .NET performance, while **KeyDB**, **DiceDB**, **Memcached**, **Caffeine**, **Apache Ignite**, and **SugarDB** provide high-speed caching across Go, Java, Python, Node.js, and C++.
 
-Let's make in-memory caching more open, transparent, and performant.
+---
+
+## 🗂️ Table of Contents 📋
+
+- [☁️ SaaS/Hosted Platforms](#️-saashosted-platforms-)
+- [🔓 Open-Source GitHub Projects](#-open-source-github-projects-)
+  - [⚡ Redis-Compatible & High-Performance Caches](#-redis-compatible--high-performance-caches)
+  - [⚡ Memcached, Proxies & Protocol Routers](#-memcached-proxies--protocol-routers)
+  - [⚡ Embedded & Application-Level Cache Libraries](#-embedded--application-level-cache-libraries)
+  - [⚡ Distributed Data Grids & In-Memory Computing](#-distributed-data-grids--in-memory-computing)
+- [🛠️ Frameworks & Decision Architecture](#️-frameworks--decision-architecture-)
+- [🤝 How to Contribute](#-how-to-contribute-)
+- [☕ Support & Sponsorship](#-support--sponsorship-)
+- [⭐ Star History](#-star-history-)
+- [⚠️ Disclaimer](#️-disclaimer-)
+
+---
+
+## ☁️ SaaS/Hosted Platforms 🌐
+
+> 📊 **Sector Market Size & Dynamics**: The global in-memory database and data caching market is valued at **~$10.4B – $17.5B (2025/2026)** and is tracking at an 11.2% CAGR. The market structure is **moderately fragmented**: hyper-scale cloud providers (AWS, Microsoft Azure, Google Cloud) hold heavy market concentration for integrated infrastructure, while specialized vendors (Redis Ltd., Upstash, Momento, Dragonfly Cloud, Hazelcast) thrive by capturing developer-first serverless and extreme performance niches.
+
+| Platform | Description | Pricing (Starting Tier) | Free Tier / Trial Limits | Company Scale (Valuation / Revenue) |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Google Cloud Memorystore](https://cloud.google.com/memorystore)** ☁️ | **Google's managed caching** — supports Redis, Memcached, and Valkey. Best for GCP-native caching. | ~$0.049 / GiB-hour (Basic Tier) | No permanent free tier ($300 GCP new account trial credit) | **$4.25 Trillion** (Alphabet Market Cap) |
+| **[Azure Cache for Redis](https://azure.microsoft.com/en-us/products/cache/)** 💻 | **Microsoft's managed Redis** — integrated with Azure ecosystem. Note migration timeline to Azure Managed Redis. | ~$0.022 / hour (Basic C0, 250 MB) | No permanent free tier ($200 Azure new account trial credit) | **$3.93 Trillion** (Microsoft Market Cap) |
+| **[Amazon ElastiCache](https://aws.amazon.com/elasticache/)** 📦 | **AWS's fully managed caching service** — supports Redis, Memcached, and Valkey. Serverless & node options. | $0.084 / GB-hour (Valkey Serverless) or ~$0.017 / hour (t4g.micro) | 750 hrs/month `cache.t3.micro` for 12 months (or $100 credits for new accounts) | **$2.75 Trillion** (Amazon Market Cap / $169B AWS Annual Revenue) |
+| **[Redis Enterprise Cloud](https://redis.com/cloud/)** 🔴 | **The commercial Redis platform** — fully managed with active-active geo-distribution and modules. | $5.00 / month (Essentials, 250 MB) | Permanent Free Tier (30 MB database, 30 connections, 100 ops/sec) | **~$2.0 Billion** (Private Valuation) |
+| **[Hazelcast Cloud](https://hazelcast.com/)** ⚡ | **In-memory data grid** — distributed caching and stream processing at scale. | Metered consumption / Custom quote | 14-day Free Trial (Cloud Standard, 0.5 GiB memory limit, single node) | **~$100M - $250M** (Estimated Valuation / $63.6M Raised) |
+| **[Momento Serverless Cache](https://www.gomomento.com/)** 🚀 | **Serverless caching platform** — pay-per-use with sub-millisecond latency. | ~$0.018 / GiB-hour (Valkey physical storage) | Permanent Free Tier (5 GB monthly data transfer included) | **~$50M - $100M** (Estimated Valuation) |
+| **[Dragonfly Cloud](https://www.dragonflydb.io/)** 🐉 | **Managed Dragonfly** — multi-threaded architecture for high throughput & memory efficiency. | ~$8.00 / GB memory per month | No permanent free tier (Free trial available upon request) | **~$50M - $100M** (Estimated Valuation / $21M Raised) |
+| **[Upstash Redis](https://upstash.com/redis)** ⚡ | **Serverless Redis** — pay-per-request pricing with REST API and global replication. | $0.20 per 100K commands ($0.25/GB storage) | Permanent Free Tier (500K commands/month, 256 MB storage, 10 GB bandwidth) | **~$20M - $50M** (Estimated Valuation / $11.9M Raised) |
+| **[Aiven for Redis](https://aiven.io/redis)** 🦀 | **Managed caching on multiple clouds** — available on AWS, GCP, Azure, and DigitalOcean. | $12.00 / month (Hobbyist Plan) | Permanent Free Plan (1 VM, 1 CPU, 1 GB RAM, 1 GB Storage) | **Private startup** ($210M+ total funding raised for Aiven) |
+| **[Memurai](https://www.memurai.com/)** 🪟 | **Redis-compatible cache for Windows** — native Windows service for Windows-centric environments. | Custom quote for Enterprise Edition | Developer Edition Free for dev/test (10-day max continuous uptime limit per launch) | **Private boutique / Niche** |
+
+---
+
+## 🔓 Open-Source GitHub Projects 🛠️
+
+*The open-source projects below are sorted by GitHub Star counts (descending).*
+
+### ⚡ Redis-Compatible & High-Performance Caches
+
+- **[Redis 8](https://github.com/redis/redis)** [![GitHub Stars](https://img.shields.io/github/stars/redis/redis?style=social&color=white)](https://github.com/redis/redis/stargazers) 🔴  
+  **Redis under dual/AGPLv3 licensing**, integrating Redis Stack modules directly into core. Features up to 87% faster commands, 2x throughput, JSON, Time Series, and Search Query Engine.
+
+- **[Dragonfly](https://github.com/dragonflydb/dragonfly)** [![GitHub Stars](https://img.shields.io/github/stars/dragonflydb/dragonfly?style=social&color=white)](https://github.com/dragonflydb/dragonfly/stargazers) 🐉  
+  **Modern ultra-fast in-memory data store**, BSL 1.1 licensed. Multi-threaded, shared-nothing architecture delivering 2.5–3.5x throughput of original Redis while using 15–22% less RAM.
+
+- **[Valkey](https://github.com/valkey-io/valkey)** [![GitHub Stars](https://img.shields.io/github/stars/valkey-io/valkey?style=social&color=white)](https://github.com/valkey-io/valkey/stargazers) 🛡️  
+  **The primary open-source BSD-3-Clause successor to Redis**, Linux Foundation project backed by AWS, Google, and Oracle. Fully retains Redis data structures, Sentinel, clustering, and Lua scripts with multithreaded I/O.
+
+- **[KeyDB](https://github.com/Snapchat/KeyDB)** [![GitHub Stars](https://img.shields.io/github/stars/Snapchat/KeyDB?style=social&color=white)](https://github.com/Snapchat/KeyDB/stargazers) 🔑  
+  **Multi-threaded Redis fork from Snapchat**, BSD-3-Clause licensed. Features active-active multi-master replication, multi-threaded query execution, and FLASH storage overflow.
+
+- **[Garnet](https://github.com/microsoft/garnet)** [![GitHub Stars](https://img.shields.io/github/stars/microsoft/garnet?style=social&color=white)](https://github.com/microsoft/garnet/stargazers) 💎  
+  **Microsoft Research's Redis-compatible cache store**, MIT licensed. Built on modern .NET with native multithreading, async network I/O, and lock-free data structures.
+
+- **[DiceDB](https://github.com/DiceDB/dice)** [![GitHub Stars](https://img.shields.io/github/stars/DiceDB/dice?style=social&color=white)](https://github.com/DiceDB/dice/stargazers) 🎲  
+  **In-memory real-time database with SQL-based reactivity**, fork of Valkey. Drop-in Redis replacement with `dicedb-spill` module for RocksDB disk persistence on eviction.
+
+- **[Redka](https://github.com/nalgeon/redka)** [![GitHub Stars](https://img.shields.io/github/stars/nalgeon/redka?style=social&color=white)](https://github.com/nalgeon/redka/stargazers) 🗃️  
+  **Redis re-implemented with SQLite**, BSD-3-Clause licensed. Provides Redis API compatibility backed by ACID-compliant SQLite storage.
+
+---
+
+### ⚡ Memcached, Proxies & Protocol Routers
+
+- **[Memcached](https://github.com/memcached/memcached)** [![GitHub Stars](https://img.shields.io/github/stars/memcached/memcached?style=social&color=white)](https://github.com/memcached/memcached/stargazers) ⚡  
+  **The classic distributed memory object caching system**, BSD-3-Clause licensed. Simple, multi-threaded, high-speed key-value caching standard for web applications.
+
+- **[twemproxy (nutcracker)](https://github.com/twitter/twemproxy)** [![GitHub Stars](https://img.shields.io/github/stars/twitter/twemproxy?style=social&color=white)](https://github.com/twitter/twemproxy/stargazers) 🐦  
+  **Twitter's fast, lightweight proxy for Memcached and Redis**, Apache-2.0 licensed. Provides high-performance connection pooling, sharding, and key distribution.
+
+- **[Mcrouter](https://github.com/facebook/mcrouter)** [![GitHub Stars](https://img.shields.io/github/stars/facebook/mcrouter?style=social&color=white)](https://github.com/facebook/mcrouter/stargazers) 👤  
+  **Facebook's Memcached protocol router**, MIT licensed. Scales hyper-scale Memcached deployments with consistent hashing, multi-cluster routing, and failover.
+
+---
+
+### ⚡ Embedded & Application-Level Cache Libraries
+
+- **[Caffeine](https://github.com/ben-manes/caffeine)** [![GitHub Stars](https://img.shields.io/github/stars/ben-manes/caffeine?style=social&color=white)](https://github.com/ben-manes/caffeine/stargazers) ☕  
+  **High-performance in-memory caching library for Java**, Apache-2.0 licensed. Near-optimal hit rates using Window TinyLFU eviction algorithm.
+
+- **[BuntDB](https://github.com/tidwall/buntdb)** [![GitHub Stars](https://img.shields.io/github/stars/tidwall/buntdb?style=social&color=white)](https://github.com/tidwall/buntdb/stargazers) 🎯  
+  **Embeddable in-memory key/value database for Go**, MIT licensed. Supports spatial R-Tree indexing, custom sorting, and JSON indexing.
+
+- **[Ristretto](https://github.com/dgraph-io/ristretto)** [![GitHub Stars](https://img.shields.io/github/stars/dgraph-io/ristretto?style=social&color=white)](https://github.com/dgraph-io/ristretto/stargazers) 🍃  
+  **High-performance memory cache library for Go**, Apache-2.0 licensed. Focused on throughput, contention resistance, and TinyLFU eviction.
+
+- **[SugarDB (formerly EchoVault)](https://github.com/EchoVault/SugarDB)** [![GitHub Stars](https://img.shields.io/github/stars/EchoVault/SugarDB?style=social&color=white)](https://github.com/EchoVault/SugarDB/stargazers) 🍬  
+  **Embeddable and distributed in-memory alternative to Redis**, Apache-2.0 licensed. Go-native with LFU/LRU eviction, Pub/Sub, and Raft clustering.
+
+---
+
+### ⚡ Distributed Data Grids & In-Memory Computing
+
+- **[Hazelcast](https://github.com/hazelcast/hazelcast)** [![GitHub Stars](https://img.shields.io/github/stars/hazelcast/hazelcast?style=social&color=white)](https://github.com/hazelcast/hazelcast/stargazers) 🌰  
+  **Unified real-time data platform and distributed cache**, Apache-2.0 licensed. Combines distributed in-memory storage with real-time stream processing.
+
+- **[Apache Ignite](https://github.com/apache/ignite)** [![GitHub Stars](https://img.shields.io/github/stars/apache/ignite?style=social&color=white)](https://github.com/apache/ignite/stargazers) 🔥  
+  **Distributed in-memory database, caching, and computing platform**, Apache-2.0 licensed. Supports ACID transactions, ANSI SQL, and compute grid processing.
+
+---
+
+## 🛠️ Frameworks & Decision Architecture 💡
+
+When selecting an in-memory cache architecture for your platform:
+
+1. **Permissive Open-Source Sovereign**: Choose **[Valkey](https://github.com/valkey-io/valkey)** for 100% Redis command compatibility under BSD-3-Clause licensing.
+2. **Extreme Multi-Core Vertical Scaling**: Deploy **[Dragonfly](https://github.com/dragonflydb/dragonfly)** for multi-threaded performance and reduced RAM overhead under heavy concurrency.
+3. **Active-Active Multi-Region Replication**: Deploy **[KeyDB](https://github.com/Snapchat/KeyDB)** for multi-master active-active replication across data centers.
+4. **.NET Ecosystem Integration**: Utilize **[Garnet](https://github.com/microsoft/garnet)** for .NET-native async performance and lock-free memory utilization.
+5. **In-App Local Caching**: Use **[Caffeine](https://github.com/ben-manes/caffeine)** for Java or **[Ristretto](https://github.com/dgraph-io/ristretto)** / **[BuntDB](https://github.com/tidwall/buntdb)** for Go applications.
+6. **Managed Cloud Infrastructure**: Leverage **Amazon ElastiCache**, **Redis Enterprise Cloud**, **Google Memorystore**, or **Upstash Redis** for automated scaling, backup, and SLA coverage.
+
+---
+
+## 🤝 How to Contribute 📝
+
+Contributions are welcome! Help us maintain the definitive in-memory caching directory:
+
+1. 🍴 **Fork** this repository.
+2. ➕ **Add/Edit** entries in `README.md` following the table or list format.
+3. 🔗 Ensure all links target official sites or stargazers pages.
+4. 🚀 **Submit a Pull Request** with a brief rationale.
+
+---
+
+## ☕ Support & Sponsorship 💖
+
+If you found this ecosystem guide helpful, please consider supporting the project! Your star or sponsorship keeps open-source research independent and up to date.
+
+* ⭐ **Star & Share**: Give this repo a star on GitHub and share it with software engineers & platform architects!
+* 💬 **Join the Community**: Chat with developers on our [Discord Server](https://discord.gg/jc4xtF58Ve).
+* ☕ **Buy Me a Coffee**: Sponsor the maintainer via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## 📊 Star History 📈
+
+[![Star History Chart](https://star-history.com/svg?repos=ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached&type=date&legend=top-left)](https://star-history.com/#ishandutta2007/Awesome-In-Memory-Caching-Redis-Memcached&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer 📜
+
+- This repository is a **community-curated list** for informational and educational purposes.
+- In-memory data structures store mission-critical application state; ensure proper access controls, TLS encryption, and backup configurations prior to production deployment.
+- Licensing status summary: Valkey (BSD-3-Clause), Redis 8 (AGPLv3/SSPLv1), Dragonfly (BSL 1.1), KeyDB (BSD-3-Clause), Garnet (MIT), Caffeine (Apache-2.0), Memcached (BSD-3-Clause). Always verify current license agreements with your compliance team.
+
+---
+
+<p align="center">
+  <b>Made with ❤️ for platform engineers, backend developers, and software architects worldwide.</b>
+</p>
