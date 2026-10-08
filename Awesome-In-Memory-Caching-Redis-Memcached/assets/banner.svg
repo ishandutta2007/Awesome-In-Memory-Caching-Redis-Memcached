@@ -18,16 +18,6 @@
       <stop offset="0%" stop-color="#ffffff" />
       <stop offset="100%" stop-color="#cbd5e1" />
     </linearGradient>
-    
-    <!-- Glow Filters -->
-    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
   <style>
@@ -35,27 +25,16 @@
     .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; }
     .badge { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; fill: #ffffff; }
     
-    /* Dynamic Animated Background Elements */
-    .pulse-circle { animation: pulse 4s ease-in-out infinite alternate; transform-origin: center; }
-    .float-item1 { animation: float1 6s ease-in-out infinite alternate; }
-    .float-item2 { animation: float2 8s ease-in-out infinite alternate; }
-    .dash-line { stroke-dasharray: 10, 15; animation: dash 20s linear infinite; }
-
+    /* SMIL / CSS animations compatible with SVG rendering engines */
     @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.25; }
-      100% { transform: scale(1.08); opacity: 0.45; }
-    }
-    @keyframes float1 {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-15px) rotate(3deg); }
-    }
-    @keyframes float2 {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(12px) rotate(-2deg); }
+      0% { opacity: 0.25; }
+      100% { opacity: 0.45; }
     }
     @keyframes dash {
       to { stroke-dashoffset: -1000; }
     }
+    .pulse-circle { animation: pulse 4s ease-in-out infinite alternate; }
+    .dash-line { stroke-dasharray: 10, 15; animation: dash 20s linear infinite; }
   </style>
 
   <!-- Background Layer -->
@@ -67,66 +46,63 @@
     <path d="M 100,0 L 100,320 M 200,0 L 200,320 M 300,0 L 300,320 M 400,0 L 400,320 M 500,0 L 500,320 M 600,0 L 600,320 M 700,0 L 700,320 M 800,0 L 800,320 M 900,0 L 900,320 M 1000,0 L 1000,320 M 1100,0 L 1100,320" />
   </g>
 
-  <!-- Animated Ambient Glows (Kept in Background behind text) -->
-  <circle cx="150" cy="100" r="140" fill="#dc2626" opacity="0.2" filter="url(#glowRed)" class="pulse-circle" />
-  <circle cx="1050" cy="220" r="160" fill="#4f46e5" opacity="0.25" filter="url(#glowBlue)" class="pulse-circle" />
+  <!-- Background Glows -->
+  <circle cx="150" cy="100" r="140" fill="#dc2626" opacity="0.2" class="pulse-circle" />
+  <circle cx="1050" cy="220" r="160" fill="#4f46e5" opacity="0.25" class="pulse-circle" />
 
-  <!-- Animated Dynamic Data Stream Flow (Right Side - Behind Badges) -->
-  <g opacity="0.4" class="float-item2">
+  <!-- Dynamic Data Streams -->
+  <g opacity="0.4">
     <path d="M 750,260 C 850,200 900,280 1000,180 C 1100,80 1150,140 1200,60" fill="none" stroke="url(#primaryGrad)" stroke-width="3" class="dash-line" />
     <path d="M 700,290 C 800,230 880,310 980,210 C 1080,110 1120,170 1200,90" fill="none" stroke="#6366f1" stroke-width="2" class="dash-line" />
   </g>
 
-  <!-- Foreground Dynamic Visual Pill Cards (Safely positioned to the right to never obscure title) -->
-  <g class="float-item1" transform="translate(820, 60)">
+  <!-- Visual Feature Pills on the Right -->
+  <g transform="translate(820, 50)">
     <rect width="150" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
     <circle cx="25" cy="21" r="7" fill="#ef4444" />
     <text x="42" y="26" class="badge">Redis OSS</text>
   </g>
 
-  <g class="float-item2" transform="translate(990, 110)">
+  <g transform="translate(990, 105)">
     <rect width="140" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
     <circle cx="25" cy="21" r="7" fill="#3b82f6" />
     <text x="42" y="26" class="badge">Valkey 8.0</text>
   </g>
 
-  <g class="float-item1" transform="translate(850, 170)">
+  <g transform="translate(850, 165)">
     <rect width="150" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
     <circle cx="25" cy="21" r="7" fill="#10b981" />
     <text x="42" y="26" class="badge">Dragonfly DB</text>
   </g>
 
-  <g class="float-item2" transform="translate(1010, 220)">
+  <g transform="translate(1010, 220)">
     <rect width="140" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
     <circle cx="25" cy="21" r="7" fill="#f59e0b" />
     <text x="42" y="26" class="badge">Memcached</text>
   </g>
 
-  <!-- FOREGROUND TEXT & CONTENT (Guaranteed high visibility and foreground placement) -->
+  <!-- FOREGROUND TEXT & CONTENT -->
   <g transform="translate(60, 0)">
-    <!-- Top Accent Bar -->
+    <!-- Accent Line -->
     <rect x="0" y="62" width="80" height="5" rx="2.5" fill="url(#primaryGrad)" />
     
-    <!-- Main Title -->
+    <!-- Titles -->
     <text x="0" y="115" class="title">Awesome In-Memory Caching</text>
     <text x="0" y="160" class="title" fill="#f8fafc" font-size="34">Redis, Memcached &amp; Ecosystem</text>
     
     <!-- Subtitle -->
     <text x="0" y="205" class="subtitle">Curated SaaS Managed Services, Open-Source Alternatives &amp; Key-Value Engines</text>
     
-    <!-- Tag Badges in Hero -->
+    <!-- Tag Badges -->
     <g transform="translate(0, 235)">
-      <rect x="0" y="0" width="130" height="28" rx="6" fill="#ef4444" opacity="0.2" />
-      <rect x="0" y="0" width="130" height="28" rx="6" fill="none" stroke="#ef4444" stroke-width="1" />
-      <text x="65" y="18" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#fca5a5">⚡ High Throughput</text>
+      <rect x="0" y="0" width="140" height="28" rx="6" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1" />
+      <text x="70" y="18" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#fca5a5">⚡ High Throughput</text>
 
-      <rect x="142" y="0" width="145" height="28" rx="6" fill="#3b82f6" opacity="0.2" />
-      <rect x="142" y="0" width="145" height="28" rx="6" fill="none" stroke="#3b82f6" stroke-width="1" />
-      <text x="214" y="18" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🚀 Sub-Millisecond</text>
+      <rect x="152" y="0" width="150" height="28" rx="6" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1" />
+      <text x="227" y="18" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#93c5fd">🚀 Sub-Millisecond</text>
 
-      <rect x="299" y="0" width="125" height="28" rx="6" fill="#10b981" opacity="0.2" />
-      <rect x="299" y="0" width="125" height="28" rx="6" fill="none" stroke="#10b981" stroke-width="1" />
-      <text x="361" y="18" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#6ee7b7">🌐 Multi-Cloud</text>
+      <rect x="314" y="0" width="130" height="28" rx="6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1" />
+      <text x="379" y="18" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#6ee7b7">🌐 Multi-Cloud</text>
     </g>
   </g>
 </svg>
